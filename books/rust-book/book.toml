@@ -1,0 +1,23 @@
+[book]
+title = "Rust 编程语言 · 读书笔记"
+authors = ["Your Name"]
+description = "我读《The Rust Programming Language》的笔记和总结"
+language = "zh-CN"
+src = "src"
+
+[output.html]
+default-theme = "light"
+preferred-dark-theme = "navy"
+git-repository-url = "https://github.com/xyzBits/bookshelf"
+edit-url-template = "https://github.com/xyzBits/bookshelf/edit/main/books/rust-book/{path}"
+site-url = "/bookshelf/rust-book/"
+
+[output.html.fold]
+enable = true
+level = 1
+
+[output.html.search]
+enable = true
+limit-results = 30
+use-boolean-and = true
+boost-title = 2

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的读书笔记</title>
+  <style>
+    :root {
+      --bg: #fafaf7;
+      --fg: #1a1a1a;
+      --muted: #666;
+      --border: #e3e0d8;
+      --accent: #b85c2c;
+      --card-bg: #fff;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1c1c1c;
+        --fg: #e6e6e6;
+        --muted: #999;
+        --border: #333;
+        --accent: #e8915a;
+        --card-bg: #252525;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    header {
+      margin-bottom: 3rem;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 0 0 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 1rem;
+      margin: 0;
+    }
+    .books {
+      display: grid;
+      gap: 1rem;
+    }
+    .book-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: border-color 0.15s, transform 0.15s;
+    }
+    .book-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+    .book-info h2 {
+      font-size: 1.125rem;
+      font-weight: 500;
+      margin: 0 0 0.25rem;
+    }
+    .book-info p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+    .arrow {
+      color: var(--muted);
+      font-size: 1.5rem;
+      transition: color 0.15s, transform 0.15s;
+    }
+    .book-card:hover .arrow {
+      color: var(--accent);
+      transform: translateX(2px);
+    }
+    footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📚 我的读书笔记</h1>
+      <p class="subtitle">用 mdBook 整理的读书总结。每读完一章就把要点写下来。</p>
+    </header>
+
+    <!--
+      想加新书？只要在 books/ 下新建一个文件夹（例如 books/my-new-book），
+      然后在这里加一张卡片。GitHub Action 会自动构建所有书。
+    -->
+    <div class="books">
+
+      <a class="book-card" href="./rust-book/">
+        <div class="book-info">
+          <h2>Rust 编程语言</h2>
+          <p>《The Rust Programming Language》读书笔记</p>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+
+      <!-- 添加新书的范例（取消注释并修改）：
+      <a class="book-card" href="./your-new-book/">
+        <div class="book-info">
+          <h2>书名</h2>
+          <p>一句话描述</p>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+      -->
+
+    </div>
+
+    <footer>
+      用 <a href="https://rust-lang.github.io/mdBook/">mdBook</a> 构建 · 部署在 GitHub Pages
+    </footer>
+  </div>
+</body>
+</html>

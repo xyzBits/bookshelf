@@ -1,0 +1,17 @@
+[book]
+title = "新书笔记"
+authors = ["Your Name"]
+description = "新书的读书笔记"
+language = "zh-CN"
+src = "src"
+
+[output.html]
+default-theme = "light"
+preferred-dark-theme = "navy"
+
+[output.html.fold]
+enable = true
+level = 1
+
+[output.html.search]
+enable = true
