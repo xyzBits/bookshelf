@@ -35,3 +35,7 @@
 ## 与其他章节的联系
 
 <!-- 这一节用到了哪些前面学过的概念？它会被后面的哪些章节用到？ -->
+
+## 重点词语
+- **There is no consensus in the programming community about what features a language mut have to be considered object oriented.**
+- **arguably** = reasonable opinion, but people may disagree 

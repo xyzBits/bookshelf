@@ -35,3 +35,15 @@
 ## 与其他章节的联系
 
 <!-- 这一节用到了哪些前面学过的概念？它会被后面的哪些章节用到？ -->
+
+## 重点词语
+- **modeling** = design
+- **influenced** = helped / affected
+- **to each other** = other objects
+- **coined** = created / invented
+- **competing** = different / disagree with each other 
+- **certain** = some specific, particular, selected
+- **characteristic** = feature, quality, property
+- **idiomatic** = natural, idiomatic Rust means "Rust code" that feels natural in Rust
+- **considered + noun**
+- **strength** = feature, ownership, borrowing, lifetimes, pattern matching
