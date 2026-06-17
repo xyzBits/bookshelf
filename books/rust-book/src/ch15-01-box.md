@@ -7,12 +7,13 @@
 ## 一句话总结
 
 <!-- 用一句话概括这一节讲了什么 -->
+What is Box and how to use Box?
 
 ## 核心要点
 
--
--
--
+- Where does Box come From?
+- What is Box?
+- How to use Box?
 
 ## 关键概念
 
@@ -21,6 +22,10 @@
 | 概念 | 解释 |
 | --- | --- |
 |      |      |
+- smart pointer
+- transfer value from stack to heap
+- value on heap, pointer on tack and point to heap
+- allocated by Box::new() on heap, deallocated automically Rust when going out of scope
 
 ## 代码示例
 
