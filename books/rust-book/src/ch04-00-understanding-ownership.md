@@ -7,6 +7,7 @@
 ## 一句话总结
 
 <!-- 用一句话概括这一节讲了什么 -->
+Rust's ownership system is a central feature that enables memory safety without a garbage collector and affects related concepts like borrowing, slices, and memory layout.
 
 ## 核心要点
 
@@ -37,9 +38,12 @@
 <!-- 这一节用到了哪些前面学过的概念？它会被后面的哪些章节用到？ -->
 
 ## 词语
-- unique
-- implication
-- lay out in memory
+- unique = very special, distinctive 
+- implication = effect, consequences
+- lay out in memory = arrange or store data in memory 
+- paragraph
+- as well as = and also 
+- 
 
 
 
