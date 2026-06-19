@@ -1,81 +1,95 @@
 # References and Borrowing
 
-> 📖 原文：<https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html>
-> 📅 读完时间：_____
-> 状态：⬜ 未读 / 🟡 在读 / ✅ 已读
+> Original: <https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html>  
+> Finished date: _____  
+> Status: [ ] Not started / [ ] Reading / [ ] Done
 
-## 一句话总结
+## One-Sentence Summary
 
-<!-- 用一句话概括这一节讲了什么 -->
+References let code use a value without taking ownership, while Rust's borrowing rules ensure that reads, writes, and lifetimes remain safe at compile time.
 
-## 核心要点
+## Core Points
 
--
--
--
+- Borrowing means passing a reference to a value instead of transferring ownership of the value.
+- `&T` creates an immutable reference, which allows reading but not modifying the value.
+- `&mut T` creates a mutable reference, which allows modifying the value but requires exclusive access.
+- At any given time, Rust allows either one mutable reference or any number of immutable references to the same value, but not both.
+- A reference must never outlive the value it points to; Rust prevents dangling references at compile time.
+- Borrowing errors can feel restrictive, but they help catch potential bugs before the program runs.
 
-## 关键概念
+## Key Concepts
 
-<!-- 本节出现的术语、概念、API -->
-
-| 概念 | 解释 |
+| Concept | Explanation |
 | --- | --- |
-|      |      |
+| Reference | A pointer-like value that lets you access data without owning it. |
+| Borrowing | Creating and using a reference to a value. |
+| Immutable reference | A reference written as `&T`; it allows read-only access. |
+| Mutable reference | A reference written as `&mut T`; it allows modification through exclusive access. |
+| Exclusive access | The rule that only one active mutable reference may access a value at a time. |
+| Data race | A bug where multiple accesses to the same data happen at the same time, at least one is a write, and there is no synchronization. |
+| Dangling reference | A reference that points to data that no longer exists. |
+| Non-lexical lifetime | Rust's ability to end a borrow after its last use, even before the end of the block scope. |
 
-## 代码示例
+## Code Examples
 
 ```rust
-// 在阅读时想动手试的例子写在这里
+fn calculate_length(s: &String) -> usize {
+    s.len()
+}
+
+fn main() {
+    let s1 = String::from("hello");
+
+    let len = calculate_length(&s1);
+
+    println!("The length of '{s1}' is {len}.");
+}
 ```
 
-## 我的疑问与思考
-A reference is not slower just because it is safe. The checking mostly happens at compile time.
+```rust
+fn change(s: &mut String) {
+    s.push_str(", world");
+}
 
-We call the action of creating a reference **borrowing**.
+fn main() {
+    let mut s = String::from("hello");
 
-Mutable references have one big restriction: If you have a mutable reference to a value, you can have no other references to that value. 
+    change(&mut s);
 
-You can have either:
-one mutable reference
-or many immutable references 
-but not both at a time.
-
-Many readers OR one writer.
-
-&T = shared read access
-&mut T = exclusive write access 
-
-Rust allows
-
-many shared readers 
-
-one exclusive writer 
-
-But never 
-
-shared readers + writer
-
-multiple writers 
-
-```text 
-&mut T
-compile-time exclusivity, no runtime lock 
-&mut T itself is still a synchronization-like guarantee in Rust's type system, but it is not a runtime synchronization mechanism.
-
-Mutex<T>
-runtime synchronization, my block/wait 
-
+    println!("{s}");
+}
 ```
 
-a reference's scope starts from where it is introduced and continues through the last time that reference is used.
+```rust
+fn main() {
+    let mut s = String::from("hello");
+
+    let r1 = &s;
+    let r2 = &s;
+    println!("{r1} and {r2}");
+
+    let r3 = &mut s;
+    r3.push_str(", world");
+    println!("{r3}");
+}
+```
+
+## My Questions and Thoughts
+
+- Why does `&mut T` require exclusive access instead of using a runtime lock?
+- How does Rust decide exactly where a reference's lifetime ends?
+- What is the difference between a safe reference and a raw pointer in low-level Rust?
+- Borrowing feels strict at first, but the core intuition is simple: many readers are safe, one writer is safe, but readers and writers together need control.
+
+## Connections to Other Chapters
+
+- This section builds on ownership, move semantics, `Copy`, `Clone`, stack memory, and heap memory from the previous section.
+- It prepares for slices, because slices are references to parts of a collection.
+- It connects to structs and methods, where references are often used as method parameters such as `&self` and `&mut self`.
+- It connects to concurrency, because Rust's borrowing rules are one foundation for preventing data races.
+- It connects to smart pointers, because types such as `Box<T>`, `Rc<T>`, `Arc<T>`, and `RefCell<T>` extend or adjust the basic ownership and borrowing model.
 
 
-
-<!-- 没读懂的地方、想深入研究的方向、和已知知识的联系 -->
-
-## 与其他章节的联系
-
-<!-- 这一节用到了哪些前面学过的概念？它会被后面的哪些章节用到？ -->
 
 
 ## 词语
