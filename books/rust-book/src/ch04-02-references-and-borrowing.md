@@ -2,7 +2,7 @@
 
 > Original: <https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html>  
 > Finished date: _____  
-> Status: [ ] Not started / [ ] Reading / [ ] Done
+> Status:  ✅ 已读
 
 ## One-Sentence Summary
 
