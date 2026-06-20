@@ -35,3 +35,37 @@
 ## 与其他章节的联系
 
 <!-- 这一节用到了哪些前面学过的概念？它会被后面的哪些章节用到？ -->
+
+## 词语
+- contiguous = next to each other/with no gaps
+- slice = contiguous elements 
+- slice = cut a piece from something 
+- thorough discussion = detailed, careful, complete explanation 
+- wrap = cover around sth 
+- pattern = a repeated form, structure, a common way 
+- sync = synchronization 
+- out of sync = no longer inconsistent 
+- brittle = easy to break/fragile
+- tedious = boring, repetitive
+- error-prone = likely to case mistakes
+- even more = more than before 
+- float around 
+- one more than the last position
+- internally = inside something
+- drop = omit/not write 
+- two periods = .. 
+- trailing = following behind/ at the end 
+- signify = mean/indicate/represent/show
+- mess up = make a mistake/ confused 
+- sooner = eariler/ before a later time
+- recall = remember/ bring back to mind 
+- tuncate = to cut sth short
+- deref = dereference
+- dereference = follow a reference or pointer to get the value it points to 
+- coercion = automatic conversion from one type to another when Rust knows it is safe and expected 
+
+## sentence 
+- using indexes to remember parts of a String.
+- index: just a number, disconnected from the string 
+- slice: a reference into the string, connected to the string 
+- 
